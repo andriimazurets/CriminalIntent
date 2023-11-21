@@ -10,5 +10,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater).also { setContentView(it.root) }
 
+        supportFragmentManager
+            .beginTransaction()
+            .add(R.id.fragment_container, CrimeListFragment.newInstance())
+            .commit()
     }
 }
